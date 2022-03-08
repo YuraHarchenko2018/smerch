@@ -1,0 +1,26 @@
+.footer {
+    border: 1px solid black;
+    width: 100%;
+    min-height: 100px;
+    background-color: #122538;
+    padding: 40px 0px 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter-container {
+    width: 80%;
+}
+
+.footer-contact-container {
+    width: 80%;
+}
+
+.footer-copyright-container {
+    margin-top: 15px;
+    text-align: center;
+    color: #ADB5BD;
+    font-size: 14px;
+    width: 80%;
+}

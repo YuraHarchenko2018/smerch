@@ -1,0 +1,20 @@
+.header-contact-wrapper {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.header-contact-container {
+    padding: 10px 0;
+    position: relative;
+    font-size: 15px;
+    line-height: 18px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.header-contact-container a {
+    color: #333;
+    text-decoration: none;
+}

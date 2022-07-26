@@ -19,21 +19,6 @@
     padding: 4px;
 }
 
-.own-account-button {
-    background: #fff;
-    padding-top: 6px;
-    height: 24px;
-    padding-left: 12px;
-    padding-right: 12px;
-    font-size: 13px;
-    border-radius: 6px;
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    color: black;
-}
-
 
 .bottom-header {
     /* border: 1px black solid; */
@@ -51,10 +36,4 @@
     justify-content: space-between;
     padding: 4px;
     align-items: center;
-}
-
-.header-cart-moc {
-    border: 1px solid black;
-    width: 140px;
-    height: 40px;
 }

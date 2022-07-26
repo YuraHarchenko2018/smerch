@@ -23,7 +23,7 @@ const Container = () => {
 
       <div className='container-wrapper'>
         <Banners banners={banners} />
-        <Products products={productsItpedia} />
+        <Products products={productsSternenko} />
       </div>
     </div>
   );

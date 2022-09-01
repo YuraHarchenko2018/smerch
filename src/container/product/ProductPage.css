@@ -1,6 +1,6 @@
 .product-page-wrapper {
     background-color: #fff;
-    min-height: 100px;
+    min-height: 450px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -20,9 +20,7 @@
 }
 .product-page-item-img-wrapper {
     position: relative;
-}
-.product-page-item-img {
-    width: 50%;
+    width: 90%;
 }
 .product-page-item-price-block {
     padding: 10px;
@@ -41,17 +39,24 @@
     text-decoration: none;
     color: black;
 }
+.product-page-item-to-cart-wrapper {
+    position: absolute;
+    right: 5px;
+    top: 60px;
+}
 .product-page-item-to-cart {
     padding: 10px;
-    position: absolute;
     background-color: #333333;
     color: #fff;
     border-radius: 10px;
     text-align: center;
     font-size: 22px;
     font-weight: bold;
-    right: 5px;
-    top: 60px;
     width: fit-content;
     height: 20px;
+    user-select: none;
+}
+.product-page-item-to-cart-success-notice {
+    text-align: center;
+    padding: 10px 5px;
 }

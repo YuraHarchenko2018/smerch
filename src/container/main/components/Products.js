@@ -1,9 +1,39 @@
 import { Link } from "react-router-dom";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { backendLink } from '../../../constants'
 import './Products.css'
 
-const Products = ({ products }) => {
-    let [productsData] = useState(() => products)
+const Products = () => {
+    const jwtToken = localStorage.getItem('jwtToken') ?? '';
+    const [productsData, setProducts] = useState(() => [])
+
+    const getProducts = async () => {
+        const requestOptions = {
+            method: 'GET',
+            headers: new Headers({
+                'Authorization': 'Bearer ' + jwtToken, 
+                'Content-Type': 'application/x-www-form-urlencoded'
+            })
+        };
+        
+        const response = await fetch(backendLink + '/products', requestOptions)
+    
+        if (response.ok) {
+            const data = await response.json()
+                data.map((product) =>  product.currency = product.currency.label )
+
+            // if products const is empty
+            if (!productsData.length) {
+                setProducts(data)
+            }
+        } else {
+            alert('Some error with getting products')
+        }
+    }
+
+    useEffect(() => {
+        getProducts()
+    })
 
     return (
         <div className='products-blocks-container'>

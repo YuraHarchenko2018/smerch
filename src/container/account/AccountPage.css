@@ -1,0 +1,27 @@
+
+.account-avatar-img {
+    height: 100px;
+}
+.account-info-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 400px;
+}
+.account-name-title,
+.account-email-title,
+.account-age-title {
+    font-size: 18px;
+    padding: 5px 15px;
+    height: 20px;
+}
+
+.account-logout-btn {
+    font-size: 14px;
+    height: 30px;
+    border: 1px solid #c8c8c8;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 0px 10px;
+}

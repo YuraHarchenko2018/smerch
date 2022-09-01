@@ -147,3 +147,5 @@ export const productsSternenko = [
     'currency': 'UA'
   },
 ]
+
+export const backendLink = 'http://' + window.location.hostname + ':9000'

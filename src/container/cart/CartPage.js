@@ -6,37 +6,37 @@ function CartPage () {
     const [cartData, setCartData] = useState(() => false)
     const [summation, setSummation] = useState(0)
     const [reloadState, dispatchReload] = useReducer((state) => state + 1, 0);
-    const jwtToken = localStorage.getItem('jwtToken') ?? '';
-
-    const getCartData = async () => {
-        const requestOptions = {
-            method: 'GET',
-            headers: new Headers({
-                'Authorization': 'Bearer ' + jwtToken, 
-                'Content-Type': 'application/x-www-form-urlencoded'
-            })
-        };
-    
-        const response = await fetch(backendLink + '/cart', requestOptions)
-    
-        if (response.ok) {
-            let localSummation = 0
-            const data = await response.json()
-                  data.map((element) => {
-                    localSummation += element.amount * element.product.price
-                    element.product.currency = element.product.currency.labelChar
-                    element.product.amount = element.amount
-                    return element
-                  } )
-
-            setCartData(data)
-            setSummation(localSummation)
-        } else {
-            alert('Some error with getting products')
-        }
-    }
 
     useEffect(() => {
+        const getCartData = async () => {
+            const jwtToken = localStorage.getItem('jwtToken') ?? '';
+            
+            const requestOptions = {
+                method: 'GET',
+                headers: new Headers({
+                    'Authorization': 'Bearer ' + jwtToken, 
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
+            };
+        
+            const response = await fetch(backendLink + '/cart', requestOptions)
+        
+            if (response.ok) {
+                let localSummation = 0
+                const data = await response.json()
+                    data.map((element) => {
+                        localSummation += element.amount * element.product.price
+                        element.product.currency = element.product.currency.labelChar
+                        element.product.amount = element.amount
+                        return element
+                    } )
+
+                setCartData(data)
+                setSummation(localSummation)
+            } else {
+                alert('Some error with getting products')
+            }
+        }
         getCartData()
     }, [reloadState])
 

@@ -29,11 +29,8 @@ function CartPage () {
                     return element
                   } )
 
-            // if cartData is empty ???
-            // if (!cartData) {
-                setCartData(data)
-                setSummation(localSummation)
-            // }
+            setCartData(data)
+            setSummation(localSummation)
         } else {
             alert('Some error with getting products')
         }

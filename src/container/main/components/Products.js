@@ -23,6 +23,9 @@ const Products = () => {
                 data.map((product) =>  product.currency = product.currency.label )
 
             // if products const is empty
+            // if this check is missing, then will start endless rereander component, 
+            // cause useEffect havent dependencies array
+            // if useEffect will have some dependencies -> can possible remove this checker
             if (!productsData.length) {
                 setProducts(data)
             }
